@@ -13,23 +13,39 @@ const Login = () => {
 
 
     // to store value in localStorage
+ 
 
-
+    
     const handleLogin = (e) => {
         e.preventDefault();
         const loggedUser = JSON.parse(localStorage.getItem("user"));
+   
+       const checkCradintial = loggedUser.find(itm => itm?.emil === input?.email || itm?.password === input?.password);
 
-        if(input.email === loggedUser.email && input.password === loggedUser.password){
-            {   
-                localStorage.setItem("login", true);
-                navigate('/user');
-            }
-        }else if(input.email === typeof(null) && input.password.length <1){
-            alert("you are rejects")
-        }
-        else{
-            alert("wrong Email or Password")
-        }
+
+       console.log(checkCradintial);
+
+
+       
+       if (checkCradintial) {
+        localStorage.setItem("login", true);
+        navigate('/user');
+       }else{
+        alert('email or password is wrong')
+       }
+
+
+        // if(input.email === loggedUser.email && input.password === loggedUser.password){
+        //     {   
+        //         localStorage.setItem("login", true);
+        //         navigate('/user');
+        //     }
+        // }else if(input.email === typeof(null) && input.password.length <1){
+        //     alert("you are rejects")
+        // }
+        // else{
+        //     alert("wrong Email or Password")
+        // }
         
     }
 
