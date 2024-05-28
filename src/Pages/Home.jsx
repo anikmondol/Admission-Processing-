@@ -1,22 +1,29 @@
 import { useNavigate } from "react-router-dom";
-
+import wave from '../assets/wave.svg'
 
 const Home = () => {
 
     const navigate = useNavigate();
 
-    const userName = JSON.parse(localStorage.getItem("user")) ;
+    const userName = JSON.parse(localStorage.getItem("user"));
 
-    const handleLogout = () =>{
+    const handleLogout = () => {
         localStorage.removeItem("login");
         navigate('/login')
     }
 
+    console.log(typeof (userName.name));
     return (
-        <div className="mt-16">
-           <h1 className="text-2xl font-medium">HomePage</h1>
-           <p>Welcome: {userName.name}</p>
-           <button onClick={handleLogout} className="btn bg-green-500">Logout</button>
+        <div className="">
+            <h1 className="text-center mt-64 text-4xl font-bold"><span className="bg-300% bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Welcome To Programming Academy</span></h1>
+            <div className=" flex gap-5 justify-center mt-6">
+                <button  className="btn bg-green-500 text-xl text-white font-medium">Public</button>
+                <button className="btn bg-green-500 text-xl text-white font-medium">Admin</button>
+            </div>
+          
+            <img className="absolute bottom-0 w-full" src={wave} alt="" />
+      
+            
         </div>
     );
 };

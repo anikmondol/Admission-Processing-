@@ -5,12 +5,12 @@ import { useNavigate, Link } from 'react-router-dom';
 const Register = () => {
     const navigate = useNavigate() 
 
-    const [input, setInput] = useState({
+    const [input, setInput] = useState([{
         name: "",
         email: "",
         password: "",
 
-    });
+    }]);
 
 
     // to store value in localStorage
