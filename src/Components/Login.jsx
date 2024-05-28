@@ -21,10 +21,13 @@ const Login = () => {
 
         if(input.email === loggedUser.email && input.password === loggedUser.password){
             {   
-                localStorage.setItem("login", true)
-                navigate('/user')
+                localStorage.setItem("login", true);
+                navigate('/user');
             }
-        }else{
+        }else if(input.email === typeof(null) && input.password.length <1){
+            alert("you are rejects")
+        }
+        else{
             alert("wrong Email or Password")
         }
         
