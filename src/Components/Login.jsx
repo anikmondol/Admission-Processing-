@@ -22,7 +22,7 @@ const Login = () => {
         if(input.email === loggedUser.email && input.password === loggedUser.password){
             {   
                 localStorage.setItem("login", true)
-                navigate('/')
+                navigate('/user')
             }
         }else{
             alert("wrong Email or Password")
@@ -35,8 +35,8 @@ const Login = () => {
         <div className="hero min-h-screen bg_img1">
             <div className="hero-content flex-col lg:flex-row-reverse">
 
-                <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 px-10">
-                    <h1 className='mt-5 mx-auto text- xl font-bold'>CREATE AN ACCOUNT</h1>
+                <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-300 px-10">
+                    <h1 className='mt-5 mx-auto text- xl font-bold'></h1>
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -59,7 +59,7 @@ const Login = () => {
                         </div>
                     </form>
                     <div className='my-5 flex'>
-                        <p>Have already an account?</p>
+                        <p>DoNot have an account?</p>
                         <Link to={"/register"} className='underline font-medium'>Register here</Link>
                     </div>
                 </div>
