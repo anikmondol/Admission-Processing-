@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {useNavigate } from "react-router-dom";
+import {useNavigate, Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -20,7 +20,8 @@ const Login = () => {
         const loggedUser = JSON.parse(localStorage.getItem("user"));
 
         if(input.email === loggedUser.email && input.password === loggedUser.password){
-            {
+            {   
+                localStorage.setItem("login", true)
                 navigate('/')
             }
         }else{
@@ -31,7 +32,7 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen bg_img">
+        <div className="hero min-h-screen bg_img1">
             <div className="hero-content flex-col lg:flex-row-reverse">
 
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 px-10">
@@ -59,7 +60,7 @@ const Login = () => {
                     </form>
                     <div className='my-5 flex'>
                         <p>Have already an account?</p>
-                        <a href="#" className='underline font-medium'>Register here</a>
+                        <Link to={"/register"} className='underline font-medium'>Register here</Link>
                     </div>
                 </div>
             </div>

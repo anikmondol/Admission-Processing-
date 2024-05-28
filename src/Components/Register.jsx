@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../Css/Register.css'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Register = () => {
     const navigate = useNavigate() 
@@ -61,7 +61,7 @@ const Register = () => {
                     </form>
                     <div className='my-5 flex'>
                         <p>Have already an account?</p>
-                        <a href="#" className='underline font-medium'>Login here</a>
+                        <Link to="/login" className='underline font-medium'>Login here</Link>
                     </div>
                 </div>
             </div>
