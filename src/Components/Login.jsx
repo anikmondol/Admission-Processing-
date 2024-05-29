@@ -22,6 +22,8 @@ const Login = () => {
    
        const checkCradintial = loggedUser.find(itm => itm?.emil === input?.email || itm?.password === input?.password);
 
+       console.log(checkCradintial);
+
 
        console.log(checkCradintial);
 

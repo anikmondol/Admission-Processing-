@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import '../Css/Register.css';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     // Initialize state with users from localStorage or as an empty array
     const [allUser, setAllUser] = useState(() => {
@@ -17,20 +17,26 @@ const Register = () => {
         password: "",
         address: "",
         phone: "",
-        age: "",
-        course: ""
+        fatherName: "",
+
     });
 
     // Update localStorage whenever allUser changes
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        setAllUser([...allUser, input]);
+        // navigate('/login'); // Navigate to login after registering
+
+    };
+
+
     useEffect(() => {
         localStorage.setItem('user', JSON.stringify(allUser));
     }, [allUser]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setAllUser([...allUser, input]);
-        navigate('/login'); // Navigate to login after registering
-    };
+    // console.log('all user', allUser);
 
     return (
         <div className="hero min-h-screen bg_img">
@@ -42,99 +48,92 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input 
+                            <input
                                 name="name"
-                                value={input.name} 
-                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} 
-                                type="text" 
-                                placeholder="Name" 
-                                className="input input-bordered" 
-                                required 
+                                value={input.name}
+                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                                type="text"
+                                placeholder="Name"
+                                className="input input-bordered"
+                                required
                             />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input 
+                            <input
                                 name="email"
-                                value={input.email} 
-                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} 
-                                type="email" 
-                                placeholder="Email" 
-                                className="input input-bordered" 
-                                required 
+                                value={input.email}
+                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                                type="email"
+                                placeholder="Email"
+                                className="input input-bordered"
+                                required
                             />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input 
+                            <input
                                 name="password"
-                                value={input.password} 
-                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} 
-                                type="password" 
-                                placeholder="Password" 
-                                className="input input-bordered" 
-                                required 
+                                value={input.password}
+                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                                type="password"
+                                placeholder="Password"
+                                className="input input-bordered"
+                                required
                             />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Address</span>
                             </label>
-                            <input 
+                            <input
                                 name="address"
-                                value={input.address} 
-                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} 
-                                type="text" 
-                                placeholder="Address" 
-                                className="input input-bordered" 
+                                value={input.address}
+                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                                type="text"
+                                placeholder="Address"
+                                className="input input-bordered"
+                                required
                             />
                         </div>
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Phone</span>
                             </label>
-                            <input 
+                            <input
                                 name="phone"
-                                value={input.phone} 
-                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} 
-                                type="text" 
-                                placeholder="Phone" 
-                                className="input input-bordered" 
+                                value={input.phone}
+                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                                type="text"
+                                placeholder="Phone"
+                                className="input input-bordered"
+                                required
                             />
                         </div>
+
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Age</span>
+                                <span className="label-text">Father Name</span>
                             </label>
-                            <input 
-                                name="age"
-                                value={input.age} 
-                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} 
-                                type="number" 
-                                placeholder="Age" 
-                                className="input input-bordered" 
+                            <input
+                                name="fatherName"
+                                value={input.fatherName}
+                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })}
+                                type="text"
+                                placeholder="Father Name"
+                                className="input input-bordered"
+                                required
                             />
                         </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Course</span>
-                            </label>
-                            <input 
-                                name="course"
-                                value={input.course} 
-                                onChange={(e) => setInput({ ...input, [e.target.name]: e.target.value })} 
-                                type="text" 
-                                placeholder="Course" 
-                                className="input input-bordered" 
-                            />
-                        </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary w-4/6 mx-auto">Register</button>
-                        </div>
+
+
+
+                        <button className='px-8 py-2 rounded bg-gray-900 text-white'>submit</button>
                     </form>
                     <div className='my-5 flex'>
                         <p>Already have an account?</p>

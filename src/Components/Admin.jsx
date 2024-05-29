@@ -1,28 +1,17 @@
-import { Link } from "react-router-dom";
+
+import AdminTable from "./AdminTable";
+import Footer from "./Footer";
 
 
 
 const Admin = () => {
-    const user = localStorage.getItem("user");
-    const login = localStorage.getItem("user");
-
-    const handleLogout = () => {
-        if (user === login) {
-            alert('All Student Reject')
-        } else {
-            localStorage.removeItem("user");
-            // localStorage.removeItem("login");
-        }
-
-    }
-
-    console.log(user);
+    
 
 
 
     return (
         <div>
-            <section className="py-6 ">
+            <section className="">
                 <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10 font-bold">
                     <p className="bg-300% text-2xl bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Management Authority</p>
                     <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">The talented people behind the scenes</h1>
@@ -211,18 +200,15 @@ const Admin = () => {
                 </div>
             </section>
 
-            <div className="w-2/5 flex mx-auto gap-3">
-                <div className="space-y-2 my-3 bg-red-200 w-[200px] p-5 rounded-xl mx-auto">
-                <h1 className="text-center">Remove Students</h1>
-                <button onClick={handleLogout} className="btn w-20 flex mx-auto">Remove</button>
-            </div>
-                <div className="space-y-2 my-3 bg-red-200 w-[200px] p-5 rounded-xl mx-auto">
-                    <h1 className="text-center">HomePage</h1>
-                    <Link to="/" className="btn w-20 flex mx-auto">Go Home</Link>
-                </div>
 
-            </div>
+            {
+                <AdminTable></AdminTable>
+            }
 
+
+            {
+                <Footer></Footer>
+            }
 
 
 
