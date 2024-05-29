@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { useState, useEffect } from "react";
 
 const UserAll = () => {
@@ -64,9 +64,6 @@ const UserAll = () => {
                                 )}
                             </tbody>
                         </table>
-                    </div>
-                    <div className="flex flex-col justify-center gap-2">
-                        <Link to="/" className="btn bg-green-500">Go Home</Link>
                     </div>
                 </div>
             </div>
