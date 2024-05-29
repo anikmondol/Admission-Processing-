@@ -24,8 +24,8 @@ const UserAll = () => {
     }, [loggedUser]);
 
     return (
-        <div>
-            <div className="max-w-3xl p-8 sm:flex sm:space-x-6 mx-auto mt-20">
+        <div className="flex items-center justify-center">
+            <div className="max-w-3xl p-8 sm:flex sm:space-x-6 ">
                 <div className="flex flex-col space-y-4">
                     <div>
                         <h2 className="text-3xl font-semibold text-center">Logged in User Details</h2>
@@ -42,7 +42,7 @@ const UserAll = () => {
                                     <th scope="col" className="p-4">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className="">
                                 {loggedUser.length > 0 ? (
                                     loggedUser.map((user, index) => (
                                         <tr key={index} className="hover:bg-orange-400">

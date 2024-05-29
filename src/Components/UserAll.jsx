@@ -12,7 +12,7 @@ const UserAll = () => {
     
 
     return (
-        <div>
+        <div className="flex items-center justify-center">
             <div className="max-w-3xl p-8 sm:flex sm:space-x-6  mx-auto  mt-20">
              
                 <div className="flex flex-col space-y-4">
