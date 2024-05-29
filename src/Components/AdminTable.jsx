@@ -1,14 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const UserAll = () => {
-    const navigate = useNavigate();
 
-    const handleLogout = () => {
-        localStorage.removeItem("login");
-        navigate('/login');
-    }
 
+   
     const [loggedUser, setLoggedUser] = useState(() => {
         return JSON.parse(localStorage.getItem("user")) || [];
     });
@@ -70,7 +66,6 @@ const UserAll = () => {
                         </table>
                     </div>
                     <div className="flex flex-col justify-center gap-2">
-                        <button onClick={handleLogout} className="btn bg-green-500">Logout</button>
                         <Link to="/" className="btn bg-green-500">Go Home</Link>
                     </div>
                 </div>
