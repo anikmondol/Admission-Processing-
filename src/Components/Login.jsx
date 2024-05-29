@@ -57,7 +57,7 @@ const Login = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
 
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-300 px-10">
-                    <h1 className='mt-5 mx-auto text- xl font-bold'></h1>
+                    <h1 className='mt-5 mx-auto text- xl font-bold'>Login!!</h1>
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">

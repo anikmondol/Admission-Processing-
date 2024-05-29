@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserAll = () => {
     const navigate = useNavigate();
@@ -9,7 +9,7 @@ const UserAll = () => {
     }
 
     const loggedUser = JSON.parse(localStorage.getItem("user"));
-    console.log(loggedUser);
+    
 
     return (
         <div>
@@ -17,9 +17,9 @@ const UserAll = () => {
              
                 <div className="flex flex-col space-y-4">
                     <div>
-                        <h2 className="text-2xl font-semibold">Logged in User Details</h2>
+                        <h2 className="text-3xl font-semibold text-center ">Logged in User Details</h2>
                     </div>
-                    <div className="overflow-x-auto shadow-md sm:rounded-lg">
+                    <div className="overflow-x-auto shadow-md sm:rounded-lg bg-slate-400">
                         <table className="min-w-full divide-y ">
                             <thead className="">
                                 <tr>
@@ -42,7 +42,7 @@ const UserAll = () => {
                             </thead>
                             <tbody className="">
                                 {loggedUser.map((user, index) => (
-                                    <tr key={index} className=" ">
+                                    <tr key={index} className=" hover:bg-orange-400">
                                         <td className="p-4">{user.name}</td>
                                         <td className="p-4">{user.email}</td>
                                         <td className="p-4">{user.address}</td>
@@ -53,7 +53,10 @@ const UserAll = () => {
                             </tbody>
                         </table>
                     </div>
+                    <div className="flex flex-col justify-center gap-2">
                     <button onClick={handleLogout} className="btn bg-green-500">Logout</button>
+                    <Link to="/" className="btn bg-green-500">Go Home</Link>
+                    </div>
                 </div>
             </div>
         </div>

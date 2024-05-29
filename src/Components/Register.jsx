@@ -11,32 +11,28 @@ const Register = () => {
         return savedUsers ? JSON.parse(savedUsers) : [];
     });
 
-    const [input, setInput] = useState({
+    const initialInputState = {
         name: "",
         email: "",
         password: "",
         address: "",
         phone: "",
         fatherName: "",
-
-    });
-
-    // Update localStorage whenever allUser changes
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        setAllUser([...allUser, input]);
-        // navigate('/login'); // Navigate to login after registering
-
     };
 
+    const [input, setInput] = useState(initialInputState);
 
+    // Update localStorage whenever allUser changes
     useEffect(() => {
         localStorage.setItem('user', JSON.stringify(allUser));
     }, [allUser]);
 
-    // console.log('all user', allUser);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setAllUser([...allUser, input]);
+        setInput(initialInputState); // Reset input fields
+        // navigate('/login'); // Navigate to login after registering
+    };
 
     return (
         <div className="hero min-h-screen bg_img">
@@ -131,9 +127,7 @@ const Register = () => {
                             />
                         </div>
 
-
-
-                        <button className='px-8 py-2 rounded bg-gray-900 text-white'>submit</button>
+                        <button className='px-8 py-2 rounded bg-gray-900 text-white'>Submit</button>
                     </form>
                     <div className='my-5 flex'>
                         <p>Already have an account?</p>
