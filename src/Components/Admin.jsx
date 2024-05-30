@@ -48,7 +48,7 @@ const Admin = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">About</a>
+                    <Link to="/user" className="btn">About</Link>
                 </div>
             </div>
 
