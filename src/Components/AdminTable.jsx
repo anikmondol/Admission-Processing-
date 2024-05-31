@@ -26,8 +26,8 @@ const UserAll = () => {
                     <div>
                         <h2 className="text-3xl font-semibold text-center">Logged in User Details</h2>
                     </div>
-                    <div className="overflow-x-auto shadow-md sm:rounded-lg bg-slate-400">
-                        <table className="min-w-full divide-y">
+                    <div className="overflow-x-auto shadow-md sm:rounded-lg ">
+                        <table className="min-w-full divide-y bg-slate-400">
                             <thead>
                                 <tr>
                                     <th scope="col" className="p-4">Name</th>
